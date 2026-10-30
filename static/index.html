@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Harbour Light Hotel – Book your stay</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav">
+      <span class="brand">Harbour Light</span>
+      <a href="#rooms">Rooms</a>
+    </nav>
+    <h1>A room with the harbour<br>at your window.</h1>
+    <p class="lede">Twenty-four rooms above the old fish quay. Breakfast included, every night.</p>
+
+    <form id="search" class="search" novalidate>
+      <label>Check-in<input type="date" id="checkin" required></label>
+      <label>Check-out<input type="date" id="checkout" required></label>
+      <label>Guests
+        <select id="guests">
+          <option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option>
+        </select>
+      </label>
+      <button type="submit">Find rooms</button>
+    </form>
+    <p id="search-error" class="error" role="alert"></p>
+  </header>
+
+  <main id="rooms">
+    <h2>Rooms</h2>
+    <p id="summary" class="muted"></p>
+    <div id="room-list"></div>
+  </main>
+
+  <footer>Harbour Light Hotel · 12 Quay Road · Reservations 24 hours a day</footer>
+
+  <dialog id="dialog">
+    <form id="booking-form" method="dialog" novalidate>
+      <h3 id="dialog-title"></h3>
+      <p id="dialog-sub" class="muted"></p>
+      <label>Full name<input id="name" autocomplete="name" required></label>
+      <label>Email<input id="email" type="email" autocomplete="email" required></label>
+      <p id="form-error" class="error" role="alert"></p>
+      <div class="actions">
+        <button type="button" id="cancel" class="ghost">Cancel</button>
+        <button type="submit">Confirm booking</button>
+      </div>
+    </form>
+    <div id="confirmation" hidden>
+      <h3>Booking confirmed</h3>
+      <p id="confirm-text"></p>
+      <button type="button" id="close">Done</button>
+    </div>
+  </dialog>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
